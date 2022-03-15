@@ -10,7 +10,7 @@ def post_list(request):
     page = request.GET.get('page')
     try:
         posts = paginator.page(page)
-    exceptPageNotAnInteger:
+    except PageNotAnInteger:
             # Если страница не является целым числом, возвращаем первую страницу.
             posts = paginator.page(1)
     except EmptyPage:
@@ -28,4 +28,3 @@ def post_detail(request, year, month, day, post):
                              publish__day=day
                              )
     return render(request, 'blog/post/detail.html', {'post': post})
-
