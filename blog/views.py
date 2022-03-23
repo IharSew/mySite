@@ -54,4 +54,6 @@ def post_share(request, post_id):
                                                     'form': form,
                                                     'sent': sent})
 
+# добавлено на маке
+
 
